@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Schedule</string>
+    <string name="action_settings">Settings</string>
+    <string name="constraints">constraints</string>
+    <string name="connectivity">connectivity</string>
+    <string name="timing">timing</string>
+    <string name="delay">delay</string>
+    <string name="charging_caption">charging_caption</string>
+    <string name="idle_caption">idle_caption</string>
+    <string name="any">any</string>
+    <string name="unmetered">unmetered</string>
+    <string name="charging_text">charging_text</string>
+</resources>
