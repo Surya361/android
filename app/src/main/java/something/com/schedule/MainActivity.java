@@ -59,13 +59,16 @@ public class MainActivity extends Activity {
      */
 
     public void scheduleJob(View v) {
+        System.out.println("entered schedule job on click");
         JobInfo.Builder builder = new JobInfo.Builder(kJobId++,mServiceComponent);
         String delay = mDelayEditText.getText().toString();
         if (delay != null && !TextUtils.isEmpty(delay)) {
+            System.out.println("check if delay != null");
             builder.setMinimumLatency(Long.valueOf(delay) * 1000);
         }
         String deadline = mDeadlineEditText.getText().toString();
         if (deadline != null && !TextUtils.isEmpty(deadline)) {
+            System.out.println("dealline not null or empty");
             builder.setOverrideDeadline(Long.valueOf(deadline) * 1000);
         }
         boolean requiresUnmetered = mWiFiConnectivityRadioButton.isChecked();
@@ -78,10 +81,12 @@ public class MainActivity extends Activity {
         }
         builder.setRequiresDeviceIdle(mRequiresIdleCheckbox.isChecked());
         builder.setRequiresCharging(mRequiresChargingCheckBox.isChecked());
+        System.out.println("everything set");
         JobScheduler jobScheduler =
                 (JobScheduler) getApplication().getSystemService(Context.JOB_SCHEDULER_SERVICE);
-
+        System.out.println("fine until here");
         jobScheduler.schedule(builder.build());
+        System.out.println("exiting");
     }
 
     public void cancelAllJobs(View v) {
